@@ -1,0 +1,235 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    overflow: hidden;
+    background: linear-gradient(45deg, #ff6b9d, #c44569, #f8b500, #ff9ff3);
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+    height: 100vh;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+
+.page {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.8s ease;
+}
+
+.page.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.big-heart {
+    font-size: 20rem;
+    animation: heartbeat 1.5s ease-in-out infinite;
+    cursor: pointer;
+    text-shadow: 0 0 30px #ff1493;
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+.enter-btn, .next-btn, .restart-btn {
+    font-size: 2rem;
+    padding: 15px 30px;
+    background: linear-gradient(45deg, #ff6b9d, #ff8e8e);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    margin-top: 30px;
+    box-shadow: 0 10px 30px rgba(255, 107, 157, 0.4);
+    transition: all 0.3s ease;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-10px); }
+    60% { transform: translateY(-5px); }
+}
+
+.enter-btn:hover, .next-btn:hover, .restart-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 15px 40px rgba(255, 107, 157, 0.6);
+}
+
+.explosion-container {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+.emoji {
+    position: absolute;
+    font-size: 3rem;
+    pointer-events: none;
+    animation: explode 3s ease-out forwards;
+}
+
+@keyframes explode {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100vh) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+.photo-container {
+    text-align: center;
+    animation: fadeInUp 1s ease;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.love-photo {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    border: 8px solid #ff1493;
+    box-shadow: 0 20px 60px rgba(255, 20, 147, 0.4);
+    margin-bottom: 30px;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+}
+
+.poetry {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 40px;
+    border-radius: 30px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    max-width: 600px;
+}
+
+.poetry h2 {
+    color: #c44569;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+.poetry p {
+    font-size: 1.5rem;
+    color: #333;
+    margin: 15px 0;
+    line-height: 1.6;
+}
+
+.love-emojis {
+    font-size: 3rem;
+    margin: 30px 0;
+    animation: rainbow 2s ease-in-out infinite;
+}
+
+@keyframes rainbow {
+    0%, 100% { filter: hue-rotate(0deg); }
+    50% { filter: hue-rotate(180deg); }
+}
+
+.anniversary-container {
+    text-align: center;
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.anniversary-container h1 {
+    font-size: 3rem;
+    color: #fff;
+    text-shadow: 3px 3px 6px rgba(0,0,0,0.5);
+    margin-bottom: 30px;
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from { text-shadow: 3px 3px 6px rgba(0,0,0,0.5), 0 0 20px #ff1493; }
+    to { text-shadow: 3px 3px 6px rgba(0,0,0,0.5), 0 0 40px #ff1493, 0 0 60px #ff69b4; }
+}
+
+.love-background {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-image: 
+        radial-gradient(circle at 20% 80%, rgba(120,119,198,0.3) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(255,119,198,0.3) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(120,219,255,0.3) 0%, transparent 50%);
+    z-index: -1;
+}
+
+.message p {
+    font-size: 1.8rem;
+    color: white;
+    margin: 20px 0;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    line-height: 1.6;
+}
+
+.love-declaration {
+    font-size: 3.5rem !important;
+    color: #ff1493 !important;
+    margin: 40px 0 !important;
+    animation: heartbeat 1s infinite;
+    text-shadow: 3px 3px 6px rgba(0,0,0,0.5);
+}
+
+.big-kiss {
+    font-size: 5rem;
+    margin: 30px 0;
+    animation: bounce 1s infinite;
+}
+
+@media (max-width: 768px) {
+    .big-heart { font-size: 15rem; }
+    .love-photo { width: 250px; height: 250px; }
+    .poetry { padding: 20px; }
+    .anniversary-container h1 { font-size: 2rem; }
+    .love-declaration { font-size: 2.5rem !important; }
+}
