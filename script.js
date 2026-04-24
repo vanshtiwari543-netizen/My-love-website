@@ -1,4 +1,34 @@
-let explosionActive = false;
+let currentPage = 1;
+
+function goToAnniversary() {
+    document.getElementById('page2').classList.remove('active');
+    document.getElementById('page3').classList.add('active');
+    currentPage = 3;
+    
+    // Typewriter effect
+    const finalMsg = document.getElementById('final-message');
+    const loveDecl = document.querySelector('.love-declaration');
+    finalMsg.innerHTML = '';
+    
+    setTimeout(() => {
+        typeWriter('I LOVE YOUUUUHHHH MY WIFEY! LOVEUUUU SO MUCH!', loveDecl, 0);
+    }, 1000);
+}
+
+function restart() {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    document.getElementById('page1').classList.add('active');
+    document.getElementById('photoContainer').style.display = 'none';
+    document.getElementById('explosion').innerHTML = '';
+    document.querySelector('.love-declaration').innerHTML = '';
+    document.getElementById('final-message').textContent = 'At last, only want to convey that...';
+    currentPage = 1;
+    
+    setTimeout(() => {
+        const heart = document.getElementById('bigHeart');
+        heart.style.transform = 'scale(1)';
+        heart.style.animation = 'heartbeat 1.5s ease-in-out infinite';
+    }, 100);
 
 function enterHeart() {
     const heart = document.getElementById('bigHeart');
