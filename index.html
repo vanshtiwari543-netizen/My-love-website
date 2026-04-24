@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Heart ❤️</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Page 1: Big Heart -->
+        <div id="page1" class="page active">
+            <div class="big-heart" id="bigHeart">
+                💖
+            </div>
+            <button class="enter-btn" onclick="enterHeart()">Go Inside My Heart 💕</button>
+        </div>
+
+        <!-- Page 2: Explosion + Photo + Poetry -->
+        <div id="page2" class="page">
+            <div class="explosion-container" id="explosion"></div>
+            <div class="photo-container" id="photoContainer" style="display: none;">
+                <img src="her-photo.jpg" alt="My Love" class="love-photo" id="lovePhoto">
+                <div class="poetry" id="poetry">
+                    <h2>💖 You are inside my heart 💖</h2>
+                    <p>You will be there <strong>FOREVER and FOREVER</strong></p>
+                    <p>Just like <strong>LIC - Zindagi ke saath bhi, Zindagi ke baad bhi! 💕</strong></p>
+                    <div class="love-emojis">💋💖💕😘❤️💗💝💞💓💘</div>
+                    <button class="next-btn" onclick="goToAnniversary()">Go to Next Page ➡️</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Page 3: Anniversary Message -->
+        <div id="page3" class="page">
+            <div class="anniversary-container">
+                <h1>Happy Anniversary My Mommy My Buggu! 🎉💖</h1>
+                <div class="love-background"></div>
+                <div class="message">
+                    <p>💕 Sorry for making mistakes, making you upset 💕</p>
+                    <p>But day by day I am trying to be a <strong>BETTER PERSON FOR YOU</strong> ❤️</p>
+                    <p>I will give you <strong>ALL THE THINGS YOU DESERVE</strong> and ALL LOVE</p>
+                    <p>Even going out of my boundary, I will still do that! 💪💕</p>
+                    <p>You are my <strong>EVERYTHING</strong> now 😍</p>
+                    <p>Can't imagine my life without you! 🌟</p>
+                    <p>If I'm saying this, I <strong>REALLY MEAN IT</strong> 💯</p>
+                    <p id="final-message">At last, only want to convey that...</p>
+                    <h2 class="love-declaration">I LOVE YOUUUUHHHH MY WIFEY! LOVEUUUU SO MUCH! 😍💋💖</h2>
+                    <div class="big-kiss">😘😘😘😘😘</div>
+                    <button class="restart-btn" onclick="restart()">💕 Replay Our Love Story 💕</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
